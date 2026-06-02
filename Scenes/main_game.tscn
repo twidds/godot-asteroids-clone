@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3gtx8tic4bm0"]
 
 [ext_resource type="PackedScene" uid="uid://bm8tw66ebcw5a" path="res://Scenes/player_ship.tscn" id="1_l756w"]
+[ext_resource type="PackedScene" uid="uid://i4ehcbfq2cf1" path="res://Scenes/wrap2d.tscn" id="3_0e3vx"]
 
 [node name="MainGame" type="Node" unique_id=965907670]
 
@@ -8,5 +9,10 @@
 scale = Vector2(1, 1.0108519)
 
 [node name="PlayerShip" parent="World" unique_id=766207868 instance=ExtResource("1_l756w")]
+position = Vector2(845, 420)
+
+[node name="Wrap2D" parent="World/PlayerShip" unique_id=1847623800 node_paths=PackedStringArray("target") instance=ExtResource("3_0e3vx")]
+target = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="World" unique_id=1741199752]
+position = Vector2(800, 450)
