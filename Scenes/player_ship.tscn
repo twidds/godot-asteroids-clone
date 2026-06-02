@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://m1c6k8cfakuq" path="res://Assets/Sprites/triangle_ship1.svg" id="1_3k1ca"]
 [ext_resource type="Script" uid="uid://iewfgp5vk70k" path="res://Scripts/player_ship.gd" id="1_fuej1"]
-[ext_resource type="Script" uid="uid://dj7oipuvk4efd" path="res://Scenes/ship_movement.gd" id="3_ty8tg"]
+[ext_resource type="Script" uid="uid://dj7oipuvk4efd" path="res://Scripts/ship_movement.gd" id="3_ty8tg"]
 
 [node name="PlayerShip" type="CharacterBody2D" unique_id=766207868]
 scale = Vector2(0.5, 0.5)

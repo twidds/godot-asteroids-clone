@@ -43,4 +43,3 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.normalized() * MAX_VELOCITY
 	
 	ship.position += velocity * delta
-	print(velocity.length())
