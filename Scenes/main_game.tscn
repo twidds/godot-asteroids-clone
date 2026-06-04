@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bm8tw66ebcw5a" path="res://Scenes/player_ship.tscn" id="1_l756w"]
 [ext_resource type="PackedScene" uid="uid://i4ehcbfq2cf1" path="res://Scenes/wrap2d.tscn" id="3_0e3vx"]
+[ext_resource type="PackedScene" uid="uid://ctm2bvaq1730c" path="res://Scenes/asteroid_small.tscn" id="3_6j5ir"]
 
 [node name="MainGame" type="Node" unique_id=965907670]
 
@@ -9,6 +10,7 @@
 scale = Vector2(1, 1.0108519)
 
 [node name="PlayerShip" parent="World" unique_id=766207868 instance=ExtResource("1_l756w")]
+z_index = 5
 position = Vector2(845, 420)
 
 [node name="Wrap2D" parent="World/PlayerShip" unique_id=1847623800 node_paths=PackedStringArray("target") instance=ExtResource("3_0e3vx")]
@@ -16,3 +18,15 @@ target = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="World" unique_id=1741199752]
 position = Vector2(800, 450)
+
+[node name="Small Asteroid" parent="." unique_id=1718992131 instance=ExtResource("3_6j5ir")]
+position = Vector2(934, 562)
+
+[node name="Small Asteroid2" parent="." unique_id=1713191917 instance=ExtResource("3_6j5ir")]
+position = Vector2(625, 509)
+
+[node name="Small Asteroid3" parent="." unique_id=1213657605 instance=ExtResource("3_6j5ir")]
+position = Vector2(543, 206)
+
+[node name="Small Asteroid4" parent="." unique_id=843282862 instance=ExtResource("3_6j5ir")]
+position = Vector2(1079, 293)

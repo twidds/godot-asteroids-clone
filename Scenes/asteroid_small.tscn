@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ctm2bvaq1730c"]
+
+[ext_resource type="Script" uid="uid://dts8nru4jjiwq" path="res://Scripts/asteroid_small.gd" id="1_nrmry"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5cgh1"]
+radius = 11.0
+
+[node name="Small Asteroid" type="Area2D" unique_id=1718992131]
+script = ExtResource("1_nrmry")
+
+[node name="Shape" type="Polygon2D" parent="." unique_id=433672617]
+position = Vector2(2.3841858e-07, -2.3841858e-07)
+scale = Vector2(1.9166667, 1.8333334)
+polygon = PackedVector2Array(-4, -5, -3, -5, -1, -6, 1, -6, 3, -6, 4, -4, 6, -3, 6, 0, 5, 4, 3, 4, 1, 6, 0, 6, -3, 6, -2, 4, -4, 5, -6, 1, -6, -2, -4, -2, -5, -3, -5, -4)
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=430318013]
+shape = SubResource("CircleShape2D_5cgh1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
