@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://m1c6k8cfakuq" path="res://Assets/Sprites/triangle_ship1.svg" id="1_3k1ca"]
 [ext_resource type="Script" uid="uid://iewfgp5vk70k" path="res://Scripts/player_ship.gd" id="1_fuej1"]
-[ext_resource type="Script" uid="uid://bu8qwkes5ybuf" path="res://Scripts/ship_collision.gd" id="3_iitm4"]
 [ext_resource type="Script" uid="uid://dj7oipuvk4efd" path="res://Scripts/ship_movement.gd" id="3_ty8tg"]
+[ext_resource type="Script" uid="uid://cqmx84dasmvjm" path="res://Scripts/player_hurtbox.gd" id="4_l6tvr"]
 [ext_resource type="Script" uid="uid://x2jfm8lswgqp" path="res://Scripts/health_component.gd" id="5_iitm4"]
 
 [node name="PlayerShip" type="CharacterBody2D" unique_id=766207868]
@@ -18,10 +18,19 @@ centered = false
 offset = Vector2(-34.5, -60)
 
 [node name="ShipCollider" type="CollisionPolygon2D" parent="." unique_id=1267552922]
+visible = false
 rotation = 1.5707964
 scale = Vector2(4.6874995, 3.3535876)
 polygon = PackedVector2Array(0, -17.891287, -3.8400004, -16.698534, -7.253334, 4.1746335, 0, 4.77101, 7.253334, 4.1746335, 2.986667, -16.698534)
-script = ExtResource("3_iitm4")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=85475384 node_paths=PackedStringArray("health_component")]
+script = ExtResource("4_l6tvr")
+health_component = NodePath("../HealthComponent")
+
+[node name="HurtboxCollider" type="CollisionPolygon2D" parent="Hurtbox" unique_id=1704052675]
+rotation = 1.5707964
+scale = Vector2(4.6874995, 3.3535876)
+polygon = PackedVector2Array(0, -17.891287, -3.8400004, -16.698534, -7.253334, 4.1746335, 0, 4.77101, 7.253334, 4.1746335, 2.986667, -16.698534)
 
 [node name="ShipMovement" type="Node" parent="." unique_id=892103925 node_paths=PackedStringArray("ship")]
 script = ExtResource("3_ty8tg")
@@ -31,4 +40,5 @@ ship = NodePath("..")
 unique_name_in_owner = true
 script = ExtResource("5_iitm4")
 
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
 [connection signal="health_hit_zero" from="HealthComponent" to="." method="_health_hit_zero"]

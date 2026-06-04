@@ -1,4 +1,3 @@
-class_name ShipCollider
 extends CollisionPolygon2D
 
 
