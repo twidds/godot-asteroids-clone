@@ -11,12 +11,13 @@ var current_health := 0
 func _ready() -> void:
 	current_health = max_health
 
-
 func damage(amount: int) -> void:
-	current_health -= amount
-	health_change.emit(current_health, max_health)
-	if current_health <= 0:
-		health_hit_zero.emit()
+	if current_health > 0:
+		amount = amount if amount <= current_health else current_health
+		current_health -= amount
+		if current_health == 0:
+			health_hit_zero.emit()
+		health_change.emit(current_health, max_health)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
