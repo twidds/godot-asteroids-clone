@@ -3,6 +3,7 @@ class_name PlayerShip
 
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var ship_movement: Node = $ShipMovement
+@onready var score_component: ScoreComponent = $ScoreComponent
 
 func _physics_process(delta: float) -> void:
 	var turn_direction: = Input.get_axis("p1_move_left","p1_move_right")

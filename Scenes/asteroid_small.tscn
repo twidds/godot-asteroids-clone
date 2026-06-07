@@ -15,6 +15,7 @@ radial_velocity_max = 21.499977
 gravity = Vector3(0, 0, 0)
 
 [node name="Small Asteroid" type="Area2D" unique_id=1718992131]
+z_index = 4
 script = ExtResource("1_nrmry")
 
 [node name="Shape" type="Polygon2D" parent="." unique_id=433672617]

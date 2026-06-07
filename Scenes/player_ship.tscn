@@ -5,8 +5,10 @@
 [ext_resource type="Script" uid="uid://dj7oipuvk4efd" path="res://Scripts/ship_movement.gd" id="3_ty8tg"]
 [ext_resource type="Script" uid="uid://cqmx84dasmvjm" path="res://Scripts/player_hurtbox.gd" id="4_l6tvr"]
 [ext_resource type="Script" uid="uid://x2jfm8lswgqp" path="res://Scripts/health_component.gd" id="5_iitm4"]
+[ext_resource type="Script" uid="uid://pas7vh2g6i4j" path="res://Scripts/score_component.gd" id="6_l6tvr"]
 
 [node name="PlayerShip" type="CharacterBody2D" unique_id=766207868]
+z_index = 5
 scale = Vector2(0.5, 0.5)
 motion_mode = 1
 script = ExtResource("1_fuej1")
@@ -39,6 +41,9 @@ ship = NodePath("..")
 [node name="HealthComponent" type="Node" parent="." unique_id=39137804]
 unique_name_in_owner = true
 script = ExtResource("5_iitm4")
+
+[node name="ScoreComponent" type="Node" parent="." unique_id=2114496794]
+script = ExtResource("6_l6tvr")
 
 [connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
 [connection signal="health_hit_zero" from="HealthComponent" to="." method="_health_hit_zero"]
