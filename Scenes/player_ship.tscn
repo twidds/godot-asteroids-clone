@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://m1c6k8cfakuq" path="res://Assets/Sprites/triangle_ship1.svg" id="1_3k1ca"]
 [ext_resource type="Script" uid="uid://iewfgp5vk70k" path="res://Scripts/player_ship.gd" id="1_fuej1"]
-[ext_resource type="Script" uid="uid://dj7oipuvk4efd" path="res://Scripts/ship_movement.gd" id="3_ty8tg"]
+[ext_resource type="Script" uid="uid://dj7oipuvk4efd" path="res://Scripts/Components/ship_movement_component.gd" id="3_ty8tg"]
 [ext_resource type="Script" uid="uid://cqmx84dasmvjm" path="res://Scripts/player_hurtbox.gd" id="4_l6tvr"]
-[ext_resource type="Script" uid="uid://x2jfm8lswgqp" path="res://Scripts/health_component.gd" id="5_iitm4"]
-[ext_resource type="Script" uid="uid://pas7vh2g6i4j" path="res://Scripts/score_component.gd" id="6_l6tvr"]
+[ext_resource type="Script" uid="uid://x2jfm8lswgqp" path="res://Scripts/Components/health_component.gd" id="5_iitm4"]
+[ext_resource type="Script" uid="uid://pas7vh2g6i4j" path="res://Scripts/Components/score_component.gd" id="6_l6tvr"]
 
 [node name="PlayerShip" type="CharacterBody2D" unique_id=766207868]
 z_index = 5
@@ -34,7 +34,7 @@ rotation = 1.5707964
 scale = Vector2(4.6874995, 3.3535876)
 polygon = PackedVector2Array(0, -17.891287, -3.8400004, -16.698534, -7.253334, 4.1746335, 0, 4.77101, 7.253334, 4.1746335, 2.986667, -16.698534)
 
-[node name="ShipMovement" type="Node" parent="." unique_id=892103925 node_paths=PackedStringArray("ship")]
+[node name="MovementComponent" type="Node" parent="." unique_id=892103925 node_paths=PackedStringArray("ship")]
 script = ExtResource("3_ty8tg")
 ship = NodePath("..")
 

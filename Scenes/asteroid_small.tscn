@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ctm2bvaq1730c"]
 
 [ext_resource type="Script" uid="uid://dts8nru4jjiwq" path="res://Scripts/asteroid_small.gd" id="1_nrmry"]
-[ext_resource type="Script" uid="uid://x2jfm8lswgqp" path="res://Scripts/health_component.gd" id="2_pxh28"]
+[ext_resource type="Script" uid="uid://x2jfm8lswgqp" path="res://Scripts/Components/health_component.gd" id="2_pxh28"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5cgh1"]
 radius = 11.0
