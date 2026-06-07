@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ctm2bvaq1730c"]
+
+[ext_resource type="Script" uid="uid://dts8nru4jjiwq" path="res://Scripts/asteroid_small.gd" id="1_nrmry"]
+[ext_resource type="Script" uid="uid://x2jfm8lswgqp" path="res://Scripts/health_component.gd" id="2_pxh28"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5cgh1"]
+radius = 11.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dw84t"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 11.54
+radial_velocity_min = 21.499977
+radial_velocity_max = 21.499977
+gravity = Vector3(0, 0, 0)
+
+[node name="Small Asteroid" type="Area2D" unique_id=1718992131]
+script = ExtResource("1_nrmry")
+
+[node name="Shape" type="Polygon2D" parent="." unique_id=433672617]
+position = Vector2(2.3841858e-07, -2.3841858e-07)
+scale = Vector2(1.9166667, 1.8333334)
+polygon = PackedVector2Array(-4, -5, -3, -5, -1, -6, 1, -6, 3, -6, 4, -4, 6, -3, 6, 0, 5, 4, 3, 4, 1, 6, 0, 6, -3, 6, -2, 4, -4, 5, -6, 1, -6, -2, -4, -2, -5, -3, -5, -4)
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=430318013]
+shape = SubResource("CircleShape2D_5cgh1")
+
+[node name="DeathParticles" type="GPUParticles2D" parent="." unique_id=1323844970]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_dw84t")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1370912954]
+unique_name_in_owner = true
+script = ExtResource("2_pxh28")
+max_health = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="health_hit_zero" from="HealthComponent" to="." method="_health_hit_zero"]
