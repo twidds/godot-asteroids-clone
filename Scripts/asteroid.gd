@@ -1,5 +1,5 @@
-class_name SmallAsteroid
-extends Area2D
+class_name Asteroid extends Area2D
+
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var collider: CollisionShape2D = $Collider
 @onready var death_particles: GPUParticles2D = $DeathParticles
@@ -8,7 +8,7 @@ extends Area2D
 func _ready() -> void:
 	pass
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
@@ -20,7 +20,7 @@ func _on_timer_timeout() -> void:
 	queue_free()
 
 func _health_hit_zero() -> void:
-	collider.disabled = true
+	collider.set_deferred("disabled",true)
 	shape.visible = false	
 	death_particles.restart()
 	

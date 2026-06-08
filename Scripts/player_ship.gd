@@ -1,6 +1,5 @@
 class_name PlayerShip extends CharacterBody2D
 
-
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var ship_movement: MovementComponent = $MovementComponent
 @onready var score_component: ScoreComponent = $ScoreComponent
@@ -17,11 +16,6 @@ func _physics_process(delta: float) -> void:
 		var facing := Vector2.from_angle(transform.get_rotation())
 		var v_ship := ship_movement.velocity
 		weapon_component.fire_weapon(self, facing, v_ship)
-
-func hit(collider: Node2D) -> void:
-	if collider is SmallAsteroid:
-		print("Smacked asteroid")
-		health_component.damage(1)
 
 func _health_hit_zero() -> void:
 	print("you died")

@@ -18,8 +18,3 @@ func damage(amount: int) -> void:
 		if current_health == 0:
 			health_hit_zero.emit()
 		health_change.emit(current_health, max_health)
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
