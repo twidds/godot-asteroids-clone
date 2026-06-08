@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://cqmx84dasmvjm" path="res://Scripts/player_hurtbox.gd" id="4_l6tvr"]
 [ext_resource type="Script" uid="uid://x2jfm8lswgqp" path="res://Scripts/Components/health_component.gd" id="5_iitm4"]
 [ext_resource type="Script" uid="uid://pas7vh2g6i4j" path="res://Scripts/Components/score_component.gd" id="6_l6tvr"]
+[ext_resource type="Script" uid="uid://fyyjlkluvhd8" path="res://Scripts/Components/weapon_component.gd" id="7_n4oq7"]
+[ext_resource type="PackedScene" uid="uid://cvhgd8mastkil" path="res://Scenes/basic_weapon.tscn" id="8_0gljw"]
 
 [node name="PlayerShip" type="CharacterBody2D" unique_id=766207868]
 z_index = 5
@@ -44,6 +46,11 @@ script = ExtResource("5_iitm4")
 
 [node name="ScoreComponent" type="Node" parent="." unique_id=2114496794]
 script = ExtResource("6_l6tvr")
+
+[node name="WeaponComponent" type="Node2D" parent="." unique_id=1524933732]
+position = Vector2(36, 0)
+script = ExtResource("7_n4oq7")
+weapon_scene = ExtResource("8_0gljw")
 
 [connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_area_entered"]
 [connection signal="health_hit_zero" from="HealthComponent" to="." method="_health_hit_zero"]

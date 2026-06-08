@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dow8dha63m36"]
+
+[ext_resource type="Script" uid="uid://d4lap4pb76rit" path="res://Scripts/bullet.gd" id="1_fmml1"]
+[ext_resource type="Script" uid="uid://d4b41i1owhju8" path="res://Scripts/circle_shape.gd" id="1_rx4sd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmml1"]
+radius = 2.0
+
+[node name="PelletBullet" type="Area2D" unique_id=15294920]
+script = ExtResource("1_fmml1")
+
+[node name="CircleShape" type="Node2D" parent="." unique_id=1461772444]
+script = ExtResource("1_rx4sd")
+radius = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1565168921]
+shape = SubResource("CircleShape2D_fmml1")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

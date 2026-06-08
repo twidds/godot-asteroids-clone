@@ -1,4 +1,4 @@
-extends Node
+class_name MovementComponent extends Node
 
 #Hooks to drop in the object being controlled
 @export var ship : PhysicsBody2D
